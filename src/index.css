@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500&display=swap');
+@import "global/reset.css";
+html{
+    font-size: 10px;
+}
+
+:root {
+    --font-s: 1.2rem;
+    --font-m: 1.6rem;
+    --font-l: 2.8rem;
+    --font-xl: 3.2rem;
+    --font-e: 4.8rem;
+}
+
+@font-face {
+    font-family: "Mplus 1p" , sans-serif;
+}

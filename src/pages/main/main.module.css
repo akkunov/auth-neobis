@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    width: 100%;
+    height: 100vh;
+}
+.img{
+    width: 420px;
+    height: 446.26px;
+}
+.title{
+    font-family: "Mplus 1p" ,sans-serif;
+    font-size: var(--font-e);
+    font-weight: 500;
+    text-align: center;
+    line-height: 71.28px;
+}
+.subTitle{
+    font-family: "Mplus 1p", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 29.7px;
+    text-align: center;
+
+}

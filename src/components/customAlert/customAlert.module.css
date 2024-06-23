@@ -1,0 +1,50 @@
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: rgba(236, 0, 0, 1);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    border: 1px solid rgba(236, 0, 0, 1);
+    background-color: transparent;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+    animation: slideInFromLeft 0.5s forwards;
+    font-family: "Mplus 1p";
+    font-size: var(--font-m);
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}
+
+
+.alert.hide {
+    opacity: 0;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+

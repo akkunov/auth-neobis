@@ -1,0 +1,10 @@
+.logout{
+    font-family: "Mplus 1p";
+    font-size: var(--font-m);
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+
+}
