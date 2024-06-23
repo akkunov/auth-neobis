@@ -1,36 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './loginForm.module.css';
-import {useActions} from "../../../hook/useActions.jsx";
-import {useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
-import CustomAlert from "../../customAlert/customAlert.jsx";
 
-function LoginForm(props) {
+function LoginForm({submit}) {
     const { register, handleSubmit, formState:{errors} } = useForm({
         mode: "onChange"
     });
-    const {user} = useSelector(state => state)
-    const {LoginUser} = useActions();
-    const navigate = useNavigate();
+
 
     const onSubmit = data => {
-        LoginUser(data)
-            .then((result) => {
-                console.log(result)
-                if(result?.error?.message){
-                    throw Error('Ошибка при входе')
-                    return
-                }
-                navigate('/')
-            })
-            .catch((error) => {
-                console.error('Ошибка входа:', error, );
-            });
+        submit(data)
     };
     return (
         <>
-            {user.error && <CustomAlert message={user.error} duration={2000}/>}
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.container}>
                 <input

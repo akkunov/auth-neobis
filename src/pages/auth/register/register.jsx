@@ -1,25 +1,46 @@
 import React from 'react';
 import styles from './register.module.css'
-import Hero from '../../../assets/svg/hero.svg'
 import RegisterForm from "../../../components/auth/registerForm/registerForm.jsx";
 import GoBack from "../../../components/buttons/goBack/goBack.jsx";
-function Register(props) {
-    return (
-        <div className={styles.container}>
-            <GoBack />
-            <div className={styles.wrapper}>
-            <div className={styles.imgContainer}>
-                <img src={Hero} alt="hero image"/>
-                <h1 className={styles.title}>Lorby</h1>
-                <span className={styles.subTitle}>Твой личный репетитор</span>
-            </div>
-            <div className={styles.registerContainer}>
-                <h2 className={styles.registerTitle}>Создать аккаунт Lorby</h2>
-                <RegisterForm />
-            </div>
-            </div>
-        </div>
+import {useSelector} from "react-redux";
+import {useActions} from "../../../hook/useActions.jsx";
+import {useNavigate} from "react-router-dom";
+import CustomAlert from "../../../components/ui/customAlert/customAlert.jsx";
+import Hero from "../../../components/ui/hero/hero.jsx";
 
+
+function Register(props) {
+    const user = useSelector(state => state.user)
+    const {RegisterUser} = useActions();
+    const navigate = useNavigate();
+
+    async function submit(data){
+        try {
+            const result = await RegisterUser(data);
+            if (result?.error?.message) {
+                throw new Error('Ошибка при входе');
+            }
+            navigate('/verification');
+        } catch (error) {
+            console.error('Ошибка входа:', error);
+        }
+    }
+
+
+    return (
+        <>
+            {user.error && <CustomAlert message={user.error} duration={2000}/>}
+            <div className={styles.container}>
+                <GoBack />
+                <div className={styles.wrapper}>
+                   <Hero />
+                    <div className={styles.registerContainer}>
+                        <h2 className={styles.registerTitle}>Создать аккаунт Lorby</h2>
+                        <RegisterForm submit={submit} />
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 

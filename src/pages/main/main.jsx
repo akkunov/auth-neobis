@@ -4,7 +4,8 @@ import {useNavigate} from "react-router-dom";
 import styles from './main.module.css'
 import Hero from "../../assets/svg/hero.svg";
 import Logout from "../../components/buttons/logout/logout.jsx";
-import CustomAlert from "../../components/customAlert/customAlert.jsx";
+
+
 function Main(props) {
     const {isAuth} = useAuth()
     const navigate = useNavigate()
@@ -20,7 +21,6 @@ function Main(props) {
             <span className={styles.subTitle}>Lorby - твой личный репетитор</span>
             <img src={Hero} alt="hero image" className={styles.img}/>
             <Logout />
-            <CustomAlert  message={'неверный логин или пароль'} duration={2000}/>
         </div>
     );
 }

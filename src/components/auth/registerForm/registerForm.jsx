@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './registerForm.module.css';
 
-function RegisterForm(props) {
+function RegisterForm({submit}) {
     const { register, handleSubmit, formState: { errors }, watch, setError } = useForm({
         mode: "onChange"
     });
@@ -38,11 +38,12 @@ function RegisterForm(props) {
     };
 
     // Обработчик отправки формы
-    const onSubmit = data => {
+    const onSubmit = async data => {
         if (data.password !== data.repeatPass) {
             setError('repeatPass', { type: 'manual', message: 'Пароли не совпадают' });
             return;
         }
+        submit(data)
     };
 
     return (
