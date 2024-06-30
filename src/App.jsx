@@ -8,7 +8,7 @@ import Verification from "./pages/auth/verification/verification.jsx";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route>
-        <Route path={'/'} element={<Main />} index />
+        <Route path={'/'} element={<WithAuth><Main /></WithAuth>} index />
       <Route  path={'register'} element={<Register />}/>
       <Route  path={'login'} element={<Login />}/>
       <Route  path={'verification'} element={<Verification />}/>
