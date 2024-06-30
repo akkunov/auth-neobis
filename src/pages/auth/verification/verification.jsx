@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./verification.module.css";
-import GoBack from "../../components/buttons/goBack/goBack.jsx";
-import Hero from "../../assets/svg/hero.svg";
+import GoBack from "../../../components/ui/buttons/goBack/goBack.jsx";
 import Modal from 'react-modal';
+import Hero from "../../../components/ui/hero/hero.jsx";
 
 Modal.setAppElement(document.getElementById('root'));
 
@@ -43,11 +43,10 @@ function Verification({email}) {
         <div className={styles.container}>
             <GoBack />
             <div className={styles.wrapper}>
-                <div className={styles.imgContainer}>
-                    <img src={Hero} alt="hero image"/>
-                    <h1 className={styles.title}>Lorby</h1>
-                    <span className={styles.subTitle}>Твой личный репетитор</span>
+                <div className={styles.heroContainer}>
+                    <Hero />
                 </div>
+
                 <div className={styles.verifContainer}>
                     <p className={styles.verifTitle}>
                         Выслали письмо со

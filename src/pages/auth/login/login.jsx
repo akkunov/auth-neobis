@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './login.module.css'
-import GoBack from "../../../components/buttons/goBack/goBack.jsx";
+import GoBack from "../../../components/ui/buttons/goBack/goBack.jsx";
 import LoginForm from "../../../components/auth/loginForm/loginForm.jsx";
 import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
@@ -10,7 +10,6 @@ import Hero from "../../../components/ui/hero/hero.jsx";
 
 
 function Login(props) {
-
     const user = useSelector(state => state.user)
     const {LoginUser} = useActions();
     const navigate = useNavigate();
@@ -28,13 +27,17 @@ function Login(props) {
             console.error('Ошибка входа:', error);
         }
     }
+    console.log(user.status);
     return (
         <>
-            {user.error && <CustomAlert message={user.error} duration={2000}/>}
+            {user.status === 'error' && <CustomAlert message={user.error} duration={2000} deps={user.status}/>}
             <div className={styles.container}>
                 <GoBack />
                 <div className={styles.wrapper}>
-                    <Hero />
+                    <div className={styles.hero}>
+                        <Hero />
+                    </div>
+
                     <div className={styles.registerContainer}>
                         <h2 className={styles.registerTitle}>Вэлком бэк!</h2>
                         <LoginForm submit={submit}/>

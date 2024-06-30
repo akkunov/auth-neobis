@@ -60,7 +60,9 @@ const AuthSlice =  createSlice({
         builder.addCase(LoginUser.rejected,(state, action) => {
             console.log(action.payload)
             state.error =  action.payload?.data.message|| "Ошибка соеднения c сервером"
+            state.status= 'error'
         })
+
         builder.addCase(RegisterUser.pending, (state,action) =>{
             state.status= 'loading'
         })

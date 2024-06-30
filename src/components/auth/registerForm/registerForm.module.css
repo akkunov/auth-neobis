@@ -42,3 +42,13 @@
     color: #ff5656;
     margin-left: .5rem;
 }
+
+@media (max-width: 565px) {
+    .email,
+    .login,
+    .password,
+    .submit{
+        width: 80vw;
+        height:4.5rem;
+    }
+}

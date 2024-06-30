@@ -4,7 +4,7 @@ import Login from "./pages/auth/login/login.jsx";
 import Register from "./pages/auth/register/register.jsx";
 import Main from "./pages/main/main.jsx";
 import WithAuth from "./HOC/withAuth.jsx";
-import Verification from "./pages/verification/verification.jsx";
+import Verification from "./pages/auth/verification/verification.jsx";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route>

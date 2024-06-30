@@ -3,7 +3,7 @@ import useAuth from "../../hook/useAuth.js";
 import {useNavigate} from "react-router-dom";
 import styles from './main.module.css'
 import Hero from "../../assets/svg/hero.svg";
-import Logout from "../../components/buttons/logout/logout.jsx";
+import Logout from "../../components/ui/buttons/logout/logout.jsx";
 
 
 function Main(props) {

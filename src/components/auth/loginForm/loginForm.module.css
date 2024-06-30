@@ -4,7 +4,6 @@
     row-gap: 1rem;
 }
 
-.email,
 .login,
 .password,
 .submit{
@@ -23,8 +22,10 @@
     text-align: left;
 }
 .submit{
-    text-align: center;
-    background-color: rgba(215, 215, 215, 1);
+    text-align: center !important;
+    background-color: rgba(41, 41, 41, 1) !important;
+    color: rgba(248, 248, 248, 1) !important;
+;
 
 }
 .container li,.error{
@@ -41,4 +42,13 @@
 .error{
     color: #ff5656;
     margin-left: .5rem;
+}
+
+
+@media (max-width: 565px) {
+    .login,
+    .password,
+    .submit{
+        width: 80vw;
+    }
 }

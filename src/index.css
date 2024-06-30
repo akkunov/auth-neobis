@@ -15,3 +15,9 @@ html{
 @font-face {
     font-family: "Mplus 1p" , sans-serif;
 }
+
+@media (max-width: 842px) {
+    html{
+        font-size: 8px;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './register.module.css'
 import RegisterForm from "../../../components/auth/registerForm/registerForm.jsx";
-import GoBack from "../../../components/buttons/goBack/goBack.jsx";
+import GoBack from "../../../components/ui/buttons/goBack/goBack.jsx";
 import {useSelector} from "react-redux";
 import {useActions} from "../../../hook/useActions.jsx";
 import {useNavigate} from "react-router-dom";
@@ -29,11 +29,14 @@ function Register(props) {
 
     return (
         <>
-            {user.error && <CustomAlert message={user.error} duration={2000}/>}
+            {user.status === 'error' && <CustomAlert message={user.error} duration={2000} deps={user.status}/>}
             <div className={styles.container}>
                 <GoBack />
                 <div className={styles.wrapper}>
-                   <Hero />
+                    <div className={styles.heroContainer}>
+                        <Hero />
+                    </div>
+
                     <div className={styles.registerContainer}>
                         <h2 className={styles.registerTitle}>Создать аккаунт Lorby</h2>
                         <RegisterForm submit={submit} />

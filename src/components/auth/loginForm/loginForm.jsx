@@ -20,7 +20,7 @@ function LoginForm({submit}) {
                     {...register('name', {
                         required: "Поле обязательно",})}
                     className={styles.login}
-                    placeholder={'Придумай логин'}
+                    placeholder={'Введи туда-сюда логин'}
                 />
                 {errors.name && <p className={styles.error}>{errors.name.message}</p>}'
 
@@ -30,13 +30,13 @@ function LoginForm({submit}) {
                         required: "Поле обязательно",
                     })}
                     className={styles.password}
-                    placeholder={'Создай пароль'}
+                    placeholder={'Пароль (тоже введи)'}
                 />
                 {errors.password && <p className={styles.error}>{errors.password.message}</p>}
 
                 <input
                     type="submit"
-                    value={'Далее'}
+                    value={'Войти'}
                     className={styles.submit}
                 />
             </div>

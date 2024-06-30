@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
-import leftIcon from '../../../assets/icon/arrowleft.svg'
+import leftIcon from '../../../../assets/icon/arrowleft.svg'
 import styles from './goBack.module.css';
 function GoBack(props) {
     const navigate = useNavigate()

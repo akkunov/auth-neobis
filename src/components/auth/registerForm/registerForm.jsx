@@ -15,10 +15,6 @@ function RegisterForm({submit}) {
         specialChar: false,
     });
 
-    const password = watch('password', '');
-    const repeatPass = watch('repeatPass', '');
-
-    // Валидация пароля
     const validatePassword = (password) => {
         const length = password.length >= 8 && password.length <= 15;
         const uppercase = /[A-Z]/.test(password);
