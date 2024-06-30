@@ -75,6 +75,7 @@ const AuthSlice =  createSlice({
         })
         builder.addCase(RegisterUser.rejected,(state, action) => {
             console.log(action.payload)
+            state.status= 'error'
             state.error =  action.payload?.data.message|| "Ошибка соеднения c сервером"
         })
     }

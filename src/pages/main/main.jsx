@@ -9,11 +9,11 @@ import Logout from "../../components/ui/buttons/logout/logout.jsx";
 function Main(props) {
     const {isAuth} = useAuth()
     const navigate = useNavigate()
-    // useEffect(() =>{
-    //     if (!isAuth) {
-    //         navigate('/login')
-    //     }
-    // },[])
+    useEffect(() =>{
+        if (!isAuth) {
+            navigate('/login')
+        }
+    },[])
 
     return (
         <div className={styles.wrapper}>
